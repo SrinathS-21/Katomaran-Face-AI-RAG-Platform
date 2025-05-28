@@ -158,38 +158,6 @@ This command automatically:
 - **Face Recognition Service**: http://localhost:8001
 - **RAG Engine Service**: http://localhost:8002
 
-## 🔧 Configuration
-
-### Switching AI Providers
-
-The platform supports both OpenAI and Google Gemini. To switch providers:
-
-#### Method 1: Environment Variable
-```bash
-# In python-services/.env
-AI_PROVIDER=openai  # or "gemini"
-OPENAI_API_KEY=your_openai_key
-GOOGLE_API_KEY=your_gemini_key
-```
-
-#### Method 2: Runtime API Call
-```bash
-curl -X POST http://localhost:8002/switch-provider \
-  -H "Content-Type: application/json" \
-  -d '{"provider": "openai", "api_key": "your_openai_key"}'
-```
-
-### Logging Configuration
-
-Logs are organized by service:
-- **Backend**: `backend/logs/`
-- **Face Recognition**: `python-services/logs/face_recognition_service.log`
-- **RAG Engine**: `python-services/logs/rag_service.log`
-
-Set log levels via environment variables:
-```env
-LOG_LEVEL=DEBUG  # DEBUG, INFO, WARNING, ERROR
-```
 
 ## 📊 API Documentation
 
@@ -209,14 +177,6 @@ LOG_LEVEL=DEBUG  # DEBUG, INFO, WARNING, ERROR
 - `POST /api/chat/query` - Chat with AI about faces
 - `GET /health` - Overall system health
 
-## 🧪 Testing
-
-### Run Tests
-```bash
-npm test                    # Run all tests
-cd backend && npm test      # Backend tests only
-cd frontend && npm test     # Frontend tests only
-```
 
 ### Manual Testing
 1. **Face Registration**: Upload an image and register a face
@@ -226,7 +186,7 @@ cd frontend && npm test     # Frontend tests only
 
 ## 🎥 Demo Video
 
-**[Demo Video Link]**: [Insert your Loom video link here]
+**[Demo Video Link]**: [https://drive.google.com/file/d/1McynuiP-tHxunmRoXUl7QwKHzsHQYTM8/view?usp=sharing]
 
 *The demo video showcases:*
 - Face registration process
@@ -244,28 +204,6 @@ cd frontend && npm test     # Frontend tests only
 5. **Deployment**: Designed for containerized deployment with Docker support
 6. **Security**: Basic rate limiting and CORS protection implemented
 7. **Scalability**: Microservices architecture for horizontal scaling
-
-## 🛠️ Development
-
-### Project Structure
-```
-katomaran-faceai-rag-platform/
-├── frontend/                 # React frontend
-├── backend/                  # Node.js API server
-├── python-services/          # Python microservices
-│   ├── face_recognition/     # Face recognition service
-│   └── rag_engine/          # RAG engine service
-├── docs/                    # Documentation
-└── scripts/                 # Utility scripts
-```
-
-### Contributing
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests
-5. Submit a pull request
-
 
 
 ---
