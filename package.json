@@ -1,0 +1,48 @@
+{
+  "name": "katomaran-faceai-rag-platform",
+  "version": "1.0.0",
+  "description": "Facial Recognition and Real-time AI Q&A Platform for Katomaran AI Hackathon",
+  "main": "backend/server.js",
+  "scripts": {
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\" \"npm run face-recognition\" \"npm run rag-engine\"",
+    "backend": "cd backend && npm run dev",
+    "frontend": "cd frontend && npm start",
+    "face-recognition": "node scripts/start-face-recognition.js",
+    "rag-engine": "node scripts/start-rag-engine.js",
+    "install-all": "npm install && cd frontend && npm install && cd ../backend && npm install && cd ../python-services && pip install -r requirements.txt",
+    "build": "cd frontend && npm run build",
+    "start": "cd backend && npm start",
+    "docker:build": "docker-compose build",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f",
+    "test": "cd backend && npm test && cd ../frontend && npm test",
+    "test:backend": "cd backend && npm test",
+    "test:frontend": "cd frontend && npm test",
+    "lint": "cd backend && npm run lint && cd ../frontend && npm run lint",
+    "logs": "echo 'Checking logs...' && ls -la backend/logs/ python-services/logs/ 2>/dev/null || echo 'No logs found'",
+    "health": "curl -s http://localhost:5000/health && curl -s http://localhost:8001/health && curl -s http://localhost:8002/health",
+    "clean": "rm -rf node_modules frontend/node_modules backend/node_modules frontend/build backend/dist python-services/venv",
+    "reset": "npm run clean && npm run install-all"
+  },
+  "keywords": [
+    "facial-recognition",
+    "rag",
+    "ai",
+    "mediapipe",
+    "langchain",
+    "react",
+    "nodejs",
+    "mongodb"
+  ],
+  "author": "Katomaran AI Hackathon Team",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/katomaran-faceai-rag-platform.git"
+  },
+  "homepage": "https://katomaran.com"
+}

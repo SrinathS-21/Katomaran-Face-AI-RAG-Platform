@@ -1,0 +1,41 @@
+{
+  "0": {
+    "face_id": "Srinath_0",
+    "person_name": "Srinath",
+    "index_position": 0,
+    "confidence": 0.8475664258003235,
+    "image_quality": "low",
+    "bounding_box": {
+      "x": 236,
+      "y": 228,
+      "width": 215,
+      "height": 215
+    }
+  },
+  "1": {
+    "face_id": "Srinath_1",
+    "person_name": "Srinath",
+    "index_position": 1,
+    "confidence": 0.8197706341743469,
+    "image_quality": "low",
+    "bounding_box": {
+      "x": 245,
+      "y": 234,
+      "width": 216,
+      "height": 216
+    }
+  },
+  "2": {
+    "face_id": "Srinath_2",
+    "person_name": "Srinath",
+    "index_position": 2,
+    "confidence": 0.9236987233161926,
+    "image_quality": "low",
+    "bounding_box": {
+      "x": 239,
+      "y": 245,
+      "width": 192,
+      "height": 192
+    }
+  }
+}
